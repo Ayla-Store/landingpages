@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="in">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studi Kasus: Kasir Pintar | Pengelolaan Organisasi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Smooth scrolling configuration */
+        html { scroll-behavior: smooth; }
+        
+        /* Gradient animation */
+        .bg-gradient-animate {
+            background-size: 200% 200%;
+            animation: gradientMove 5s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Float animation */
+        .float-animate { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Section hidden styling for intersection observer */
+        .section-hidden { opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
+        .section-visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-xl font-bold text-emerald-600">Studi Kasus Inovasi Digital</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#hero" class="hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium">Beranda</a>
+                        <a href="#profil" class="hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium">Profil</a>
+                        <a href="#struktur" class="hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium">Struktur</a>
+                        <a href="#produk" class="hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium">Produk</a>
+                        <a href="#swot" class="hover:text-emerald-600 px-3 py-2 rounded-md text-sm font-medium">SWOT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slide 1: Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-16 bg-gradient-to-br from-emerald-50 via-white to-teal-50 bg-gradient-animate">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
+                    Mengelola Inovasi Digital dari <span class="text-emerald-600">Jantung Jawa Timur</span>.
+                </h1>
+                <p class="mt-4 text-xl text-slate-600 mb-8 max-w-2xl">
+                    Studi Kasus Pengelolaan Organisasi pada: <strong class="text-slate-800">Kasir Pintar (PT Global Digital Artha)</strong>.
+                </p>
+                <a href="#profil" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-emerald-600 hover:bg-emerald-700 md:text-lg transition-transform hover:scale-105 shadow-lg shadow-emerald-200">
+                    Pelajari Struktur Organisasi
+                    <i data-lucide="arrow-down" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center float-animate">
+                <!-- Placeholder Image for UMKM Using App -->
+                <div class="relative w-full max-w-md h-80 bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-100 flex items-center justify-center">
+                     <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800" alt="UMKM menggunakan tablet" class="object-cover w-full h-full opacity-90" onerror="this.src=''; this.className='hidden'; this.nextElementSibling.classList.remove('hidden');">
+                     <div class="hidden text-slate-400 text-center p-6">
+                        <i data-lucide="smartphone" class="w-16 h-16 mx-auto mb-2 text-emerald-200"></i>
+                        <p>Ilustrasi: Pelaku UMKM menggunakan aplikasi kasir digital</p>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Profil Organisasi -->
+    <section id="profil" class="py-20 bg-white section-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-emerald-600 font-semibold tracking-wide uppercase">Profil Organisasi</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">Tentang Kasir Pintar</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="w-48 h-48 bg-emerald-50 rounded-full flex items-center justify-center shadow-inner border border-emerald-100">
+                        <!-- Placeholder for Logo -->
+                        <div class="text-center">
+                            <i data-lucide="calculator" class="w-20 h-20 text-emerald-600 mx-auto mb-2"></i>
+                            <span class="font-bold text-slate-700 text-xl tracking-wider">KASIR PINTAR</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="calendar" class="w-6 h-6 text-emerald-500 mr-3"></i>
+                            <h3 class="font-bold text-lg text-slate-800">Didirikan Pada</h3>
+                        </div>
+                        <p class="text-slate-600">Tahun 2014</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-emerald-500 mr-3"></i>
+                            <h3 class="font-bold text-lg text-slate-800">Berbasis Di</h3>
+                        </div>
+                        <p class="text-slate-600">Surabaya, Jawa Timur</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="cloud" class="w-6 h-6 text-emerald-500 mr-3"></i>
+                            <h3 class="font-bold text-lg text-slate-800">Platform</h3>
+                        </div>
+                        <p class="text-slate-600">Aplikasi Point of Sales (POS) atau kasir digital berbasis cloud.</p>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition">
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="target" class="w-6 h-6 text-emerald-500 mr-3"></i>
+                            <h3 class="font-bold text-lg text-slate-800">Fokus Utama</h3>
+                        </div>
+                        <p class="text-slate-600">Memberdayakan UMKM di Indonesia dengan pencatatan transaksi yang sistematis dan terjangkau.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Visi & Misi -->
+    <section class="py-20 bg-emerald-800 text-white section-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">Arah Strategis Organisasi</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-emerald-900/50 p-8 rounded-2xl backdrop-blur-sm border border-emerald-700">
+                    <div class="inline-flex items-center justify-center p-3 bg-emerald-500 rounded-md shadow-lg mb-6">
+                        <i data-lucide="eye" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Visi</h3>
+                    <p class="text-emerald-100 text-lg leading-relaxed">
+                        Menjadi perusahaan teknologi finansial terdepan yang mendigitalkan dan meningkatkan daya saing UMKM di seluruh Indonesia.
+                    </p>
+                </div>
+                <div class="bg-emerald-900/50 p-8 rounded-2xl backdrop-blur-sm border border-emerald-700">
+                    <div class="inline-flex items-center justify-center p-3 bg-emerald-500 rounded-md shadow-lg mb-6">
+                        <i data-lucide="rocket" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Misi</h3>
+                    <ul class="space-y-4 text-emerald-100">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Menyediakan aplikasi kasir yang mudah digunakan dan terjangkau.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Memberikan edukasi dan literasi digital kepada pelaku usaha mikro dan menengah.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-emerald-400 mr-3 flex-shrink-0 mt-0.5"></i>
+                            <span>Terus berinovasi mengembangkan fitur sesuai dengan kebutuhan pasar.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Struktur Organisasi -->
+    <section id="struktur" class="py-20 bg-slate-50 section-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-emerald-600 font-semibold tracking-wide uppercase">Struktur Organisasi</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">Hierarki & Pembagian Kerja</p>
+            </div>
+            
+            <!-- Simple Org Chart -->
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col items-center">
+                    <!-- Top Level -->
+                    <div class="bg-slate-800 text-white px-8 py-4 rounded-xl shadow-lg border-b-4 border-emerald-500 w-64 text-center z-10">
+                        <p class="text-sm text-slate-300 mb-1">Top Level</p>
+                        <h3 class="font-bold text-lg">CEO & Co-Founder</h3>
+                        <p class="text-xs text-emerald-400 mt-1">Sitti Retno Farid</p>
+                    </div>
+                    
+                    <!-- Vertical Line -->
+                    <div class="w-1 h-8 bg-slate-300"></div>
+                    
+                    <!-- Middle Level -->
+                    <div class="bg-white px-8 py-4 rounded-xl shadow-md border border-slate-200 w-64 text-center z-10">
+                        <p class="text-sm text-slate-500 mb-1">Middle Management</p>
+                        <h3 class="font-bold text-slate-800">C-Level</h3>
+                        <p class="text-xs text-slate-400 mt-1">(CTO, CMO, COO)</p>
+                    </div>
+
+                    <!-- Vertical Line -->
+                    <div class="w-1 h-8 bg-slate-300"></div>
+                    
+                    <!-- Horizontal Line -->
+                    <div class="w-full max-w-2xl h-1 bg-slate-300 relative">
+                        <!-- Connector Drops -->
+                        <div class="absolute left-[12.5%] w-1 h-6 bg-slate-300 top-1"></div>
+                        <div class="absolute left-[37.5%] w-1 h-6 bg-slate-300 top-1"></div>
+                        <div class="absolute left-[62.5%] w-1 h-6 bg-slate-300 top-1"></div>
+                        <div class="absolute left-[87.5%] w-1 h-6 bg-slate-300 top-1"></div>
+                    </div>
+
+                    <!-- Operational Level -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-3xl mt-6">
+                        <div class="bg-emerald-50 px-4 py-4 rounded-lg shadow-sm border border-emerald-100 text-center">
+                            <h4 class="font-semibold text-emerald-800 text-sm">Tim Developer / IT</h4>
+                        </div>
+                        <div class="bg-emerald-50 px-4 py-4 rounded-lg shadow-sm border border-emerald-100 text-center">
+                            <h4 class="font-semibold text-emerald-800 text-sm">Tim Customer Success</h4>
+                        </div>
+                        <div class="bg-emerald-50 px-4 py-4 rounded-lg shadow-sm border border-emerald-100 text-center">
+                            <h4 class="font-semibold text-emerald-800 text-sm">Tim Marketing</h4>
+                        </div>
+                        <div class="bg-emerald-50 px-4 py-4 rounded-lg shadow-sm border border-emerald-100 text-center">
+                            <h4 class="font-semibold text-emerald-800 text-sm">Tim Sales</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-white p-6 rounded-xl shadow-sm border-l-4 border-emerald-500">
+                    <h4 class="font-bold text-slate-800 mb-2 flex items-center">
+                        <i data-lucide="bar-chart-2" class="w-5 h-5 mr-2 text-emerald-600"></i> Analisis Singkat
+                    </h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Menggunakan struktur <strong>Flat Hierarchy</strong> untuk mempercepat pengambilan keputusan di era digital dan memastikan inovasi berjalan dinamis tanpa hambatan birokrasi yang rumit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Budaya Perusahaan -->
+    <section class="py-20 bg-white section-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-emerald-600 font-semibold tracking-wide uppercase">Budaya Perusahaan</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">Nilai-Nilai Penggerak Inovasi</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Value 1 -->
+                <div class="p-6 bg-slate-50 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border border-slate-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="zap" class="w-6 h-6 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Agility</h3>
+                    <p class="text-slate-600 text-sm">Cepat beradaptasi dengan perubahan teknologi dan tren pasar aplikasi.</p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="p-6 bg-slate-50 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border border-slate-100">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Integrity</h3>
+                    <p class="text-slate-600 text-sm">Menjaga kepercayaan pengguna (Trust), terutama dalam mengamankan data transaksi UMKM.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="p-6 bg-slate-50 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border border-slate-100">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Collaboration</h3>
+                    <p class="text-slate-600 text-sm">Kerja sama tim lintas divisi (Tech x Business) untuk menciptakan produk yang tepat guna.</p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="p-6 bg-slate-50 rounded-2xl hover:-translate-y-2 transition-transform duration-300 border border-slate-100">
+                    <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="heart" class="w-6 h-6 text-orange-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Customer Obsession</h3>
+                    <p class="text-slate-600 text-sm">Mengutamakan kebutuhan dan kemudahan UMKM dalam setiap pembaruan fitur.</p>
+                </div>
+            </div>
+
+            <!-- Placeholder Image for Culture -->
+            <div class="mt-12 w-full h-64 bg-slate-200 rounded-2xl overflow-hidden relative flex items-center justify-center border border-slate-200">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" alt="Suasana Kantor" class="object-cover w-full h-full opacity-60" onerror="this.style.display='none';">
+                <div class="absolute inset-0 bg-slate-900/30 flex items-center justify-center">
+                     <p class="text-white font-medium text-lg tracking-wide shadow-sm px-4 text-center">Suasana kerja santai namun produktif tim lintas divisi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Produk & Layanan -->
+    <section id="produk" class="py-20 bg-slate-900 text-white section-hidden overflow-hidden relative">
+        <!-- Decorative blob -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-emerald-600/20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-teal-600/20 blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-emerald-400 font-semibold tracking-wide uppercase">Business Model</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">Ekosistem Digital UMKM</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Mockup -->
+                <div class="lg:w-1/3 flex justify-center float-animate">
+                    <div class="w-64 h-[500px] bg-slate-800 rounded-[2.5rem] p-3 border-4 border-slate-700 shadow-2xl relative">
+                        <!-- Phone Notch -->
+                        <div class="absolute top-0 inset-x-0 h-6 bg-slate-700 rounded-b-xl w-1/2 mx-auto"></div>
+                        <!-- Screen content -->
+                        <div class="w-full h-full bg-white rounded-[2rem] overflow-hidden flex flex-col pt-8 p-4">
+                            <div class="h-10 bg-emerald-100 rounded mb-4 animate-pulse"></div>
+                            <div class="grid grid-cols-2 gap-3 mb-4">
+                                <div class="h-20 bg-emerald-50 border border-emerald-100 rounded animate-pulse"></div>
+                                <div class="h-20 bg-emerald-50 border border-emerald-100 rounded animate-pulse"></div>
+                            </div>
+                            <div class="flex-grow bg-slate-50 border border-slate-100 rounded animate-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 backdrop-blur-sm">
+                        <h3 class="text-xl font-bold text-white mb-2 flex items-center">
+                            <i data-lucide="package" class="w-5 h-5 mr-2 text-emerald-400"></i> Kasir Pintar Free
+                        </h3>
+                        <p class="text-slate-400 text-sm">Layanan kasir dasar gratis untuk usaha mikro, membantu pencatatan awal.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-emerald-900 to-slate-800 p-6 rounded-xl border border-emerald-700 shadow-lg shadow-emerald-900/50">
+                        <h3 class="text-xl font-bold text-white mb-2 flex items-center">
+                            <i data-lucide="star" class="w-5 h-5 mr-2 text-yellow-400"></i> Kasir Pintar Pro
+                        </h3>
+                        <p class="text-emerald-100 text-sm">Layanan berbayar dengan fitur advance (manajemen stok, laporan laba rugi lengkap).</p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 backdrop-blur-sm">
+                        <h3 class="text-xl font-bold text-white mb-2 flex items-center">
+                            <i data-lucide="monitor" class="w-5 h-5 mr-2 text-emerald-400"></i> Kasir Pintar Desktop
+                        </h3>
+                        <p class="text-slate-400 text-sm">Versi PC/Laptop yang dioptimalkan untuk toko ritel berskala lebih besar.</p>
+                    </div>
+                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 backdrop-blur-sm">
+                        <h3 class="text-xl font-bold text-white mb-2 flex items-center">
+                            <i data-lucide="blocks" class="w-5 h-5 mr-2 text-emerald-400"></i> Plugin Tambahan
+                        </h3>
+                        <p class="text-slate-400 text-sm">Fitur ekstra kustom seperti manajemen franchise, struk digital, dan integrasi kurir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Analisis SWOT -->
+    <section id="swot" class="py-20 bg-slate-50 section-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-emerald-600 font-semibold tracking-wide uppercase">Strategic Management</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">Analisis Lingkungan Organisasi</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <!-- Strengths -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-green-700 text-lg">S</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Strengths</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600 list-disc list-inside ml-2">
+                        <li>Brand lokal yang sangat kuat di kalangan UMKM.</li>
+                        <li>Harga berlangganan yang kompetitif.</li>
+                        <li>Fitur pencatatan yang sangat komprehensif.</li>
+                    </ul>
+                </div>
+
+                <!-- Weaknesses -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-red-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-red-700 text-lg">W</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Weaknesses</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600 list-disc list-inside ml-2">
+                        <li>Sangat bergantung pada stabilitas server cloud eksternal.</li>
+                        <li>Edukasi pengguna di daerah pelosok masih memakan waktu.</li>
+                    </ul>
+                </div>
+
+                <!-- Opportunities -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-blue-700 text-lg">O</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Opportunities</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600 list-disc list-inside ml-2">
+                        <li>Pertumbuhan UMKM digital di Indonesia yang sangat pesat.</li>
+                        <li>Dukungan pemerintah terhadap program digitalisasi pasar tradisional.</li>
+                    </ul>
+                </div>
+
+                <!-- Threats -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-t-4 border-orange-500">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold text-orange-700 text-lg">T</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Threats</h3>
+                    </div>
+                    <ul class="space-y-3 text-slate-600 list-disc list-inside ml-2">
+                        <li>Munculnya kompetitor aplikasi POS raksasa dari luar negeri.</li>
+                        <li>Startup lokal lain yang menerima pendanaan (funding) besar.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: Jejak Langkah (Timeline) -->
+    <section class="py-20 bg-white section-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-emerald-600 font-semibold tracking-wide uppercase">Timeline</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">Jejak Langkah Organisasi</p>
+            </div>
+
+            <div class="relative border-l-2 border-emerald-200 ml-3 md:ml-1/2">
+                <!-- Item 1 -->
+                <div class="mb-10 ml-6 relative">
+                    <div class="absolute -left-8 w-4 h-4 bg-emerald-500 rounded-full border-4 border-white shadow"></div>
+                    <h3 class="font-bold text-xl text-emerald-600">2014</h3>
+                    <p class="text-slate-600 mt-2">Pendirian awal dan peluncuran prototipe aplikasi di Surabaya.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="mb-10 ml-6 relative">
+                    <div class="absolute -left-8 w-4 h-4 bg-emerald-500 rounded-full border-4 border-white shadow"></div>
+                    <h3 class="font-bold text-xl text-emerald-600">2018</h3>
+                    <p class="text-slate-600 mt-2">Mencapai ratusan ribu unduhan dan mulai memonetisasi layanan dengan merilis versi Pro.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="mb-10 ml-6 relative">
+                    <div class="absolute -left-8 w-4 h-4 bg-emerald-500 rounded-full border-4 border-white shadow"></div>
+                    <h3 class="font-bold text-xl text-emerald-600">2020</h3>
+                    <p class="text-slate-600 mt-2">Meluncurkan berbagai plugin baru untuk membantu UMKM bertahan dan pivot operasional di masa pandemi.</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="mb-10 ml-6 relative">
+                    <div class="absolute -left-8 w-4 h-4 bg-emerald-500 rounded-full border-4 border-white shadow"></div>
+                    <h3 class="font-bold text-xl text-emerald-600">2023+</h3>
+                    <p class="text-slate-600 mt-2">Terus memperluas ekosistem dan integrasi pembayaran digital (e-wallet dan QRIS) bagi jutaan pengguna aktif.</p>
+                </div>
+            </div>
+            
+            <!-- Simple Graphic Representation -->
+            <div class="mt-12 bg-slate-50 p-6 rounded-xl border border-slate-100 text-center">
+                 <p class="text-sm font-semibold text-slate-500 mb-4">Ilustrasi Pertumbuhan Pengguna</p>
+                 <div class="flex items-end justify-center space-x-4 h-32">
+                     <div class="w-12 bg-emerald-200 rounded-t-sm h-1/4 relative group"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs opacity-0 group-hover:opacity-100">2014</span></div>
+                     <div class="w-12 bg-emerald-300 rounded-t-sm h-2/4 relative group"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs opacity-0 group-hover:opacity-100">2018</span></div>
+                     <div class="w-12 bg-emerald-400 rounded-t-sm h-3/4 relative group"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs opacity-0 group-hover:opacity-100">2020</span></div>
+                     <div class="w-12 bg-emerald-600 rounded-t-sm h-full relative group"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs opacity-0 group-hover:opacity-100">2023+</span></div>
+                 </div>
+                 <div class="w-full h-1 bg-slate-300 mt-1 max-w-xs mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Identitas Kelompok -->
+    <section class="py-20 bg-emerald-50 section-hidden border-t border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-emerald-600 font-semibold tracking-wide uppercase">Tugas Kuliah</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">Tim Penyusun Landing Page</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden max-w-4xl mx-auto">
+                <div class="bg-emerald-600 px-6 py-8 text-center text-white">
+                    <p class="font-medium text-emerald-100">Mata Kuliah</p>
+                    <h3 class="text-2xl font-bold mb-4">Pengelolaan Organisasi</h3>
+                    <p class="font-medium text-emerald-100 text-sm">Dosen Pengampu:</p>
+                    <p class="text-lg">Rismaya Nikmatul Hida Saskia Putri, S.Pd., M.M.</p>
+                </div>
+                <div class="p-8">
+                    <h4 class="text-center font-bold text-slate-800 text-lg mb-6">Anggota Kelompok</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Anggota 1 -->
+                        <div class="flex items-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold mr-4">IN</div>
+                            <div>
+                                <p class="font-bold text-slate-800">IBNU NUR IKSAN</p>
+                                <p class="text-xs text-slate-500">240101109 • Riset Struktur</p>
+                            </div>
+                        </div>
+                        <!-- Anggota 2 -->
+                        <div class="flex items-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold mr-4">SA</div>
+                            <div>
+                                <p class="font-bold text-slate-800">SALMA AZZAHRO</p>
+                                <p class="text-xs text-slate-500">240101019 • Analisis SWOT</p>
+                            </div>
+                        </div>
+                        <!-- Anggota 3 -->
+                        <div class="flex items-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold mr-4">GL</div>
+                            <div>
+                                <p class="font-bold text-slate-800">GHINA LESTARI SARASSATI</p>
+                                <p class="text-xs text-slate-500">240101111 • Desain & Konten</p>
+                            </div>
+                        </div>
+                        <!-- Anggota 4 -->
+                        <div class="flex items-center p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold mr-4">SA</div>
+                            <div>
+                                <p class="font-bold text-slate-800">SITI AISYAH</p>
+                                <p class="text-xs text-slate-500">240101119 • Presentasi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: Footer / CTA -->
+    <footer class="bg-emerald-900 text-white py-16 text-center">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <i data-lucide="quote" class="w-10 h-10 mx-auto text-emerald-500/50 mb-4"></i>
+            <h2 class="text-2xl md:text-3xl font-light italic mb-8">
+                "Organisasi yang baik adalah organisasi yang mampu beradaptasi dengan zaman."
+            </h2>
+            
+            <div class="my-8 border-t border-emerald-800 w-24 mx-auto"></div>
+            
+            <h3 class="font-bold text-xl mb-4 text-emerald-400">Terima Kasih</h3>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 text-sm text-emerald-200">
+                <a href="mailto:ibnunuriksan@gmail.com" class="flex items-center hover:text-white transition">
+                    <i data-lucide="mail" class="w-4 h-4 mr-2"></i> ibnunuriksan@gmail.com
+                </a>
+            </div>
+
+            <div class="text-xs text-emerald-600/60 mt-12 space-y-2">
+                <p>Referensi Pembelajaran:</p>
+                <p>Website Resmi Kasir Pintar | Berita Teknologi Terkait</p>
+                <p class="mt-4">&copy; 2026 Tugas Kelompok Pengelolaan Organisasi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Intersection Observer for Scroll Animations
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.section-hidden');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+
